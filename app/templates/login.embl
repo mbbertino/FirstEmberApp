@@ -1,0 +1,17 @@
+.col-xs-12.login-container
+
+	form
+		
+		h1.col-xs-12 navassist
+		
+		label.col-xs-12 new user?
+			#{link-to 'register' | register..}
+		
+		input.col-xs-12.email placeholder="email"
+		
+		input.col-xs-12.password placeholder="password"
+		
+		button.col-xs-12.btn sign in
+
+		label.col-xs-12 forgot password?
+	

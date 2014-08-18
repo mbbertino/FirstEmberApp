@@ -1,0 +1,9 @@
+form submit="publishPost"
+	= input .col-xs-12 value=message.title placeholder="Title"	
+	= input .col-xs-12 value=message.body placeholder="Body"	
+	button.col-xs-12 type="submit" send msg
+
+each
+	li 
+		= title
+		= body

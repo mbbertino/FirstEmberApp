@@ -1,11 +1,9 @@
 form submit="publishPost"
-	= input .col-xs-12 value=message.title placeholder="Title"	
-	= input .col-xs-12 value=message.body placeholder="Body"	
-	button.col-xs-12 type="submit" send msg
+	= input .col-xs-5 value=message.title placeholder="Subject"	
+	= input .col-xs-5 value=message.body placeholder="Body"	
+	button.col-xs-2.btn type="submit" send
 
-section
-	each message in arrangedContent
-		div
-			.subject.col-xs-12 = message.title
-			.conetent.col-xs-12 = message.body
-			link-to "message" this .col-xs-12| reply
+each message in arrangedContent
+	div
+		link-to "message" message .col-xs-12.subject
+			= message.title

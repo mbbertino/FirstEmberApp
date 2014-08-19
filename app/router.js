@@ -8,7 +8,7 @@ Router.map(function() {
 	this.resource('login');
 	this.resource('register');
 	this.resource('messages');
-		this.route('message', { path: 'messages/:message_id' });
+		this.resource('message', { path: '/:message_id' });
 });
 
 export default Router;

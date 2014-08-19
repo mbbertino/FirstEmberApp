@@ -1,18 +1,9 @@
 / submit="createUser"
 .col-xs-12.login-container
-
-	form 
-		
+	form submit="createUser"
 		h1.col-xs-12 navassist
-		
-		label.col-xs-12 already a user? 
-			#{link-to 'login' | login..}
-		
-		/ need to make a decision on the method of writing the inputs
-		Ember.TextField type="email" class="col-xs-12 " placeholder="email"
-		
-		Ember.TextField type="password" class="col-xs-12" placeholder="password"
-		
-		button.col-xs-12.btn type="submit" sign in
-
+		label.col-xs-12 already a user? #{link-to 'login' .login| login}
+		= input .col-xs-12 type="email" value=email placeholder="email"	
+		= input .col-xs-12 type="password" value=password placeholder="password"	
+		button.col-xs-12.btn type="submit" register
 		label.col-xs-12 forgot password?

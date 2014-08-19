@@ -14,8 +14,7 @@ export default Ember.ArrayController.extend({
         title: this.get('message.title'),
         body: this.get('message.body'),
         timestamp: new Date()
-      });
-      newPost.save();
+      }).save();
     }
   }
 });

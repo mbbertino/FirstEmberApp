@@ -4,6 +4,7 @@ form submit="publishPost"
 	button.col-xs-12 type="submit" send msg
 
 each
-	li 
-		= title
-		= body
+	div
+		.subject.col-xs-12 = title
+		.conetent.col-xs-12 = body
+		link-to "message" this .col-xs-12| reply

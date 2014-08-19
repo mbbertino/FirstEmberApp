@@ -5,10 +5,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-	this.route('login');
-	this.route('register');
+	this.resource('login');
+	this.resource('register');
 	this.resource('messages');
-		this.route('message', { path: '/:message_id' });
+		this.route('message', { path: 'messages/:message_id' });
 });
 
 export default Router;

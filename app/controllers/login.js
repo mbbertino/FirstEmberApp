@@ -39,15 +39,10 @@ export default Ember.Controller.extend({
     },
 
     createUserRecord: function(user) {
-     //  var userRef = new Firebase(usersPath + '/simplelogin:' + user.id);
-     //  userRef.set({
-     //      email: user.email,
-     //      id: user.id
-     //  });
       this.store.createRecord('user', {
         email: user.email,
         userID: user.id,
-        timestamp: new Date()
+        dateJoined: new Date()
       }).save();          
     },
 

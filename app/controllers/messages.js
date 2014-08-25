@@ -18,13 +18,9 @@ export default Ember.ArrayController.extend({
         timestamp: new Date()
       }).save();
     },
-
-    // Will need to move this to the auth parent controller after testing
-    // ----------------------------------------------------
+   
     logout: function(){
-
-    	this.get('controllers.login').authClient.logout()
+    	this.get('controllers.login').send('logout')
     }
-    // ----------------------------------------------------
   }
 });

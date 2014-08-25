@@ -21,22 +21,75 @@
 @import 'vendor/nib'
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
 
+//- ------------------------------
+//- Mixins
+//- ------------------------------
+form-unit()
+	padding 0px
+	padding-left 10px
+	height 50px
+	border-radius 4px
+	border none
+	background #efefef
+	margin 10px 0 
+	font-size 18px
+
+cta()
+	background 
+
+//- ------------------------------
+
+
+	
+
+//- ------------------------------
+//- Global styling
+//- ------------------------------
 html
 	body
 		font-family: 'Open Sans', sans-serif;
-		.container 
-			margin 0 auto
-			max-width	960px
-			.main 			
-				h2
-					text-align center
+
+.container 
+	height 480px
+
+	background grey
+	margin 0 auto
+	max-width	960px
+	// .main 			
+//- ------------------------------
+
+
+//- ------------------------------
+//- Login and Register Container Styling
+//- ------------------------------
+.authentication-container
+	padding 0px
+	text-align center
+	h1
+		text-transform uppercase
+		color #ffffff
+		padding 30px 0px
+	label
+		margin 10px 0
+		color #fff
+		font-size 14px
+	input
+		form-unit()
+	button	
+		form-unit()
+		color #ffffff
+		background none
+		border 2px solid #fff
+//- ------------------------------
 
 
 
-//- Large Screen Media Query
 
+//- ------------------------------
 //- mobile/small tablets break
+//- -------------------------------
 @media screen and (max-width: 768px)
 	.container
 		padding-left 0px
 		padding-right 0px
+//- --------------------------------

@@ -26,6 +26,7 @@ export default Ember.Controller.extend({
 
 	actions: {
     userLogin: function(email, password) {    	
+    	console.log('woot')
     	this.authClient.login('password', {
 			  email: email || this.email,
 			  password: password || this.password
@@ -37,25 +38,27 @@ export default Ember.Controller.extend({
     	this.authClient.logout()
     },
 
+    createUserRecord: function(user) {
+     //  var userRef = new Firebase(usersPath + '/simplelogin:' + user.id);
+     //  userRef.set({
+     //      email: user.email,
+     //      id: user.id
+     //  });
+      this.store.createRecord('user', {
+        email: user.email,
+        userID: user.id,
+        timestamp: new Date()
+      }).save();          
+    },
+
     createUser: function(email, password){
+    	var that = this		  
 	    this.authClient.createUser(email, password, function(error, user) {
 			  if (error === null) 
 			  	{
-				  	console.log("User created successfully:", user);
-				  	this.userLogin(email, password)
+				  	that.send('createUserRecord', user)
+				  	that.send('userLogin', email, password)
 					} 
-
-			  // Add in new user once authentication is fixed.
-			  // --------------------------------------------------------
-			  // var newUserRecord = this.store.createRecord('user', {
-		    //     email: user.email, // or 
-		    //     // email: user.getEmail(), 
-		    // 		 // providerName: user.getProvider().name() // this is for the login type (pw, twitter, fb, etc)
-		    //     uid: user.id, // or 
-		    //     // uid: user.getUserId(),
-		    //     timestamp: new Date()
-		    //   }).save();
-			  // --------------------------------------------------------
 			  else 
 			  	{
 			  		console.log("Error creating user:", error);

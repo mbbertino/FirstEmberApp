@@ -1,14 +1,8 @@
-.col-xs-12.login-container
+.col-xs-12.authentication-container
 	form submit="userLogin"		
 		h1.col-xs-12 navassist	
-		label.col-xs-12 new user? #{link-to 'register' .register| register}
-		= input .col-xs-12 type="email" value=email placeholder="email"	
-		= input .col-xs-12 type="password" value=password placeholder="password"	
-		button.col-xs-12.btn type="submit" login
-		label.col-xs-12 forgot password?
-		
-		if auth.authed
-			| logged in!!!
-		else	
-			| sad day
-		button click="logout" logout
+		label.col-xs-12 Are You A New User? #{link-to 'register' .register| register}
+		= input .form-control type="email" value=email placeholder="Email"	
+		= input .form-control type="password" value=password placeholder="Password"	
+		button.form-control.btn type="submit" Sign In
+		label.pull-right Forgot Password?

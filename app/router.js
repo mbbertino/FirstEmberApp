@@ -6,8 +6,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
 	this.resource('login');
+	this.resource('register');
 	this.resource('auth', {path: ''}, function(){
-		this.resource('register');
 		this.resource('messages');
 			this.resource('message', { path: 'message/:message_id' });
 

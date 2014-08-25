@@ -1,26 +1,27 @@
 import Ember from "ember";
 
 export default Ember.Controller.extend({
-	authed: false,
-	currentUser: null,
 
 	init: function() {		
     this.authClient = new window.FirebaseSimpleLogin(new window.Firebase("https://glaring-fire-229.firebaseio.com"), function(error, user) {
       if (error) {
         alert('Authentication failed: ' + error);
       } else if (user) {
-        this.set('authed', true);
-        this.set('currentUser', user);
+      	// default logged in route
+        this.redirectTransition()
       } else {
-        this.set('authed', false);      
+        // can add in another transition if needed
       }
     }.bind(this));
   },
 
-  checkAuth: function (){
-  	console.log(
-  	this.get('currentUser')
-  		)
+  redirectTransition: function(transition) {  	
+  	if (transition) {
+      transition.retry();
+    } else {
+      // Default back to messages page
+      this.transitionToRoute('messages')
+    }
   },
 
 	actions: {
@@ -29,16 +30,7 @@ export default Ember.Controller.extend({
 			  email: email || this.email,
 			  password: password || this.password
 			  // rememberMe: remember
-			});
-
-			var previousTransition = this.get('previousTransition');
-    	if (previousTransition) {
-        this.set('previousTransition', null);
-        previousTransition.retry();
-      } else {
-        // Default back to messages page
-        this.transitionToRoute('messages');
-      }
+			}).then(this.redirectTransition(this.get('previousTransition')));			
     },
 
     logout: function() {    	

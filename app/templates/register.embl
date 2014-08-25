@@ -1,5 +1,4 @@
-/ submit="createUser"
-.col-xs-12.login-container
+.col-xs-12.user-container
 	form submit="createUser"
 		h1.col-xs-12 navassist
 		label.col-xs-12 already a user? #{link-to 'login' .login| login}

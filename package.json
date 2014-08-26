@@ -29,7 +29,9 @@
     "originate": "0.1.5",
     "broccoli-stylus-single": "~0.1.2",
     "broccoli-emblem-compiler": "~0.3.16",
-    "ember-cli-emberfire": "0.0.1"
+    "ember-cli-emberfire": "0.0.1",
+    "broccoli-static-compiler": "~0.1.4",
+    "broccoli-merge-trees": "~0.1.4"
   },
   "dependencies": {}
 }

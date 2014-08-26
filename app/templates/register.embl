@@ -1,6 +1,7 @@
 .col-xs-12.authentication-container
 	form submit="createUser"
-		h1.col-xs-12 navassist
+		.profile-circle
+			i.fa.fa-user.fa-5x
 		label.col-xs-12 Already A User, #{link-to 'login' .login| Login}
 		= input .form-control type="email" value=email placeholder="Email"	
 		= input .form-control type="password" value=password placeholder="Password"	

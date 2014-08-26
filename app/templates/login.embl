@@ -1,6 +1,8 @@
 .col-xs-12.authentication-container
-	form submit="userLogin"		
-		h1.col-xs-12 navassist	
+	form submit="userLogin"
+		.profile-circle
+			i.fa.fa-user.fa-5x
+			/ i.ion-person.icon
 		label.col-xs-12 Not A New User, #{link-to 'register' .register| Register}
 		= input .form-control type="email" value=email placeholder="Email"	
 		= input .form-control type="password" value=password placeholder="Password"	

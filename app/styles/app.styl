@@ -19,6 +19,7 @@
 */
 
 @import 'vendor/nib'
+
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
 
 //- ------------------------------
@@ -27,20 +28,33 @@
 form-unit()
 	padding 0px
 	padding-left 10px
-	height 50px
+	height 40px
 	border-radius 4px
 	border none
 	background #efefef
-	margin 10px 0 
+	margin 10px 0px
 	font-size 18px
 
 cta()
 	background 
 
+label-link()
+	color brandcolor
+	&:hover
+		color lighten(brandcolor, 10)
+		text-decoration none
+
 //- ------------------------------
 
 
-	
+//- ------------------------------
+//- Global color variables
+//- ------------------------------
+// maybe an accent color F26101 orange
+brandcolor = #57bcdb
+// accentcolor =
+// bgcolor =
+//- ------------------------------
 
 //- ------------------------------
 //- Global styling
@@ -49,12 +63,15 @@ html
 	body
 		font-family: 'Open Sans', sans-serif;
 		height 100%
-		background grey
+		// background lighten(#57bcdb, 25) // light light blue, not really good
+		// background #D9E8F5 // light grey too blue
+		// background #D9E8F5 // light grey
+		background #ffffff // straigh white
+		// background #D9E8F5 // light grey
 
 .container 
 	margin 0 auto
 	max-width	960px
-	// .main 			
 //- ------------------------------
 
 
@@ -62,23 +79,40 @@ html
 //- Login and Register Container Styling
 //- ------------------------------
 .authentication-container
-	padding 0px
+	padding 0px 15px
 	text-align center
-	h1
-		text-transform uppercase
-		color #ffffff
-		padding 30px 0px
+	
+	.profile-circle		
+		background brandcolor
+		margin 50px auto 35px
+		display inline-block
+		height 150px
+		width 150px
+		border-radius 75px
+		border 2px solid #fff		
+		position relative
+		i
+			color #fff
+			position relative
+			font-size 8em
+			top	10%
 	label
-		margin 10px 0
-		color #fff
+		margin 0px		
 		font-size 14px
+		a
+			label-link()
 	input
 		form-unit()
+		display inline-block
 	button	
 		form-unit()
 		color #ffffff
-		background none
-		border 2px solid #fff
+		background brandcolor
+		border 2px solid brandcolor
+		&:hover
+			color brandcolor
+			background #fff
+			border none
 //- ------------------------------
 
 

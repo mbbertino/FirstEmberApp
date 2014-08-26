@@ -61,17 +61,23 @@ brandcolor = #57bcdb
 //- ------------------------------
 html
 	body
-		font-family: 'Open Sans', sans-serif;
-		height 100%
+		font-family: 'Open Sans', sans-serif;	
 		// background lighten(#57bcdb, 25) // light light blue, not really good
 		// background #D9E8F5 // light grey too blue
 		// background #D9E8F5 // light grey
-		background #ffffff // straigh white
+		background #ffffff // straight white
 		// background #D9E8F5 // light grey
 
 .container 
 	margin 0 auto
 	max-width	960px
+
+.undernav
+	margin-top 50px
+
+a 
+	&:hover
+		cursor pointer
 //- ------------------------------
 
 
@@ -97,6 +103,7 @@ html
 			font-size 8em
 			top	10%
 	label
+		padding 0px
 		margin 0px		
 		font-size 14px
 		a
@@ -115,12 +122,43 @@ html
 			border none
 //- ------------------------------
 
+//- ------------------------------
+//- App navbar styling
+//- ------------------------------
+.navvy-container
+	background brandcolor
+	.navbar-collapse
+		li
+			a
+				color #fff
 
+	.navbar-header
+		color #fff
+		button
+			border none
+			&:hover
+				background none
+			&:focus
+				background none				
+		.icon-bar 
+			background #fff
+	.navbar-brand
+		color #fff
+//- ------------------------------
+.footer
+	position fixed
+	bottom 25px
+	width 100%
+	left 0px
+	.btn
+		color #fff
+		border-radius 50px
+		background brandcolor
 
 
 //- ------------------------------
 //- mobile/small tablets break
-//- -------------------------------
+//- ------------------------------
 @media screen and (max-width: 768px)
 	.container
 		padding-left 0px

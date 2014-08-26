@@ -2,18 +2,16 @@ import Ember from 'ember';
 
 
 export default Ember.ArrayController.extend({
-	needs: ['login'],
 
   init: function() {
     this.set('message', Ember.Object.create());
   },
-  sortProperties: ['timestamp'],
-  sortAscending: false, // sorts message by timestamp
   actions: {
     publishPost: function() {
+    	// try it without var newPost =  in front
       this.store.createRecord('message', {
-        title: this.title,
-        body: this.body,
+        title: this.get('message.title'),
+        body: this.get('message.body'),
         timestamp: new Date()
       }).save();
     },

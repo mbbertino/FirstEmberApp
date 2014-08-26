@@ -1,0 +1,4 @@
+.footer
+	.container
+		.col-xs-12
+			button.col-xs-12.btn{action "publishPost"} Start a Conversation

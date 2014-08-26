@@ -1,0 +1,17 @@
+.col-xs-12.navbar.navbar-default.navbar-fixed-top.navvy-container role="navigation"
+	.container
+		.navbar-header
+			button.navbar-toggle data-toggle="collapse" data-target=".navbar-collapse" type="button"
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand  My Health
+
+		.navbar-collapse.collapse		
+			ul.nav.navbar-nav     
+				li: a href="dashboard" All Messages				
+				li: a Saved
+			ul.nav.navbar-nav.navbar-right				
+				li: a{action "logout"} Logout
+				/ need to add the logout action to this item

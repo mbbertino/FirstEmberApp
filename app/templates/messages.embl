@@ -1,12 +1,12 @@
-form submit="publishPost"
-	= input .col-xs-5 value=message.title placeholder="Subject"	
-	= input .col-xs-5 value=message.body placeholder="Body"	
-	button.col-xs-2.btn type="submit" send
+render 'header'
+
+.container
+	.undernav
+		.messages-container
+			each message in arrangedContent
+				.item-container
+					link-to "message" message .subject
+						= message.title
+		render 'footer'
 
 
-button{action "logout"} logout
-
-each message in arrangedContent
-	div
-		link-to "message" message .col-xs-12.subject
-			= message.title

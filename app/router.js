@@ -6,11 +6,10 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
 	this.resource('login');
-	this.resource('register');
+	// this.resource('register'); //don't need a register
 	this.resource('auth', {path: ''}, function(){
-		this.resource('messages');
+		this.resource('messages', {path: "dashboard"});
 			this.resource('message', { path: 'message/:message_id' });
-
 	});
 });
 

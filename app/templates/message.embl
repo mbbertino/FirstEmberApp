@@ -1,3 +1,6 @@
-h1 = title
-h3 = body
-h5 = timestamp
+render 'header'
+
+.container.undernav
+	h1 = title
+	h3 = body
+	h5 = timestamp
